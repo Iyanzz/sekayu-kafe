@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sekayu Coffee & Eatery — Kunduran, Blora</title>
+  <meta name="description" content="Sekayu Coffee & Eatery — Tempat ngobrol, makan, dan menikmati waktu dengan suasana hangat di Kunduran, Blora, Jawa Tengah." />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+  <!-- AOS Animation -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== FLOATING CART BUTTON ===== -->
+  <button class="cart-fab" id="cartFab" onclick="toggleCart()" aria-label="Keranjang Pesanan">
+    <i class="fas fa-shopping-basket"></i>
+    <span class="cart-badge" id="cartBadge">0</span>
+  </button>
+
+  <!-- ===== CART DRAWER ===== -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3><i class="fas fa-shopping-basket"></i> Pesanan Saya</h3>
+      <button class="cart-close" onclick="toggleCart()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty" id="cartEmpty">
+        <i class="fas fa-utensils"></i>
+        <p>Belum ada menu dipilih</p>
+        <small>Tambahkan menu dari daftar di bawah</small>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+      <div class="cart-total">
+        <span>Total Estimasi</span>
+        <strong id="cartTotal">Rp 0</strong>
+      </div>
+      <button class="btn-booking-now" onclick="scrollToBooking()">
+        <i class="fas fa-calendar-check"></i> Lanjut Booking
+      </button>
+    </div>
+  </aside>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-icon">🌿</span>
+        <div class="logo-text">
+          <span class="logo-main">Sekayu</span>
+          <span class="logo-sub">Coffee & Eatery</span>
+        </div>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">Tentang</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#booking">Booking</a></li>
+        <li><a href="#location">Lokasi</a></li>
+        <li>
+          <a href="https://wa.me/6282246034954" target="_blank" class="nav-wa">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="https://www.genspark.ai/api/files/s/7CTaOXTF" alt="Interior Sekayu Coffee & Eatery" class="hero-img" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content" data-aos="fade-up">
+      <span class="hero-badge">☕ Kunduran, Blora</span>
+      <h1 class="hero-title">
+        <em>Sekayu</em><br/>Coffee & Eatery
+      </h1>
+      <p class="hero-tagline">
+        Tempat ngobrol, makan, dan menikmati waktu<br class="hide-sm"/>
+        dengan suasana hangat yang tak terlupakan
+      </p>
+      <div class="hero-cta">
+        <a href="#booking" class="btn btn-primary">
+          <i class="fas fa-calendar-check"></i> Booking Meja
+        </a>
+        <a href="#menu" class="btn btn-ghost">
+          <i class="fas fa-utensils"></i> Lihat Menu
+        </a>
+      </div>
+    </div>
+    <a href="#about" class="hero-scroll-down" aria-label="Scroll ke bawah">
+      <i class="fas fa-chevron-down"></i>
+    </a>
+  </section>
+
+  <!-- ===== ABOUT / SUASANA ===== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text" data-aos="fade-right">
+          <span class="section-label">Tentang Kami</span>
+          <h2 class="section-title">Hangat Seperti di Rumah Sendiri</h2>
+          <p>
+            Sekayu Coffee & Eatery hadir sebagai ruang istirahat dari rutinitas — tempat di mana
+            setiap sudutnya dirancang untuk kenyamananmu. Dengan interior kayu hangat, tanaman
+            hijau yang menjuntai indah, dan cahaya pendant yang lembut keemasan, Sekayu
+            menjadi destinasi favorit untuk <strong>santai bersama teman</strong>, 
+            <strong>couple dinner</strong>, <strong>gathering keluarga</strong>, hingga 
+            <strong>work from cafe</strong>.
+          </p>
+          <p>
+            Nikmati hidangan khas Sekayu — mulai dari Mie Kuah dengan bumbu spesial, 
+            Nasi Ayam Bakar juicy, hingga aneka snack crispy yang cocok menemani obrolanmu. 
+            Semua disajikan dengan cinta, dalam suasana yang bikin betah berlama-lama.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <i class="fas fa-wifi"></i>
+              <span>Free WiFi</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-parking"></i>
+              <span>Parkir Luas</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-heart"></i>
+              <span>Couple Friendly</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-users"></i>
+              <span>Family Friendly</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-gallery" data-aos="fade-left">
+          <div class="gallery-grid">
+            <div class="gallery-item gallery-main">
+              <img src="https://www.genspark.ai/api/files/s/7CTaOXTF" alt="Dining area Sekayu" loading="lazy" />
+            </div>
+            <div class="gallery-item">
+              <img src="https://www.genspark.ai/api/files/s/tHKkrs7B" alt="Interior Sekayu" loading="lazy" />
+            </div>
+            <div class="gallery-item">
+              <img src="https://www.genspark.ai/api/files/s/HeuKXz6t" alt="Entrance Sekayu" loading="lazy" />
+            </div>
+            <div class="gallery-item">
+              <img src="https://www.genspark.ai/api/files/s/ZG6I5YVp" alt="Menu Sekayu" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY STRIP ===== -->
+  <section class="gallery-strip">
+    <div class="strip-inner">
+      <div class="strip-item">
+        <img src="https://www.genspark.ai/api/files/s/tHKkrs7B" alt="Interior kayu Sekayu" loading="lazy" />
+        <div class="strip-caption">Interior Hangat</div>
+      </div>
+      <div class="strip-item">
+        <img src="https://www.genspark.ai/api/files/s/HeuKXz6t" alt="Entrance Sekayu" loading="lazy" />
+        <div class="strip-caption">Tanaman & Kayu</div>
+      </div>
+      <div class="strip-item">
+        <img src="https://www.genspark.ai/api/files/s/7CTaOXTF" alt="Dining area" loading="lazy" />
+        <div class="strip-caption">Neon Arch Area</div>
+      </div>
+      <div class="strip-item">
+        <img src="https://www.genspark.ai/api/files/s/63r9x4bX" alt="Mie Kuah Sekayu" loading="lazy" />
+        <div class="strip-caption">Signature Dish</div>
+      </div>
+      <div class="strip-item">
+        <img src="https://www.genspark.ai/api/files/s/ZG6I5YVp" alt="Menu pilihan" loading="lazy" />
+        <div class="strip-caption">Menu Pilihan</div>
+      </div>
+      <div class="strip-item">
+        <img src="https://www.genspark.ai/api/files/s/XrI4SupP" alt="Snack Sekayu" loading="lazy" />
+        <div class="strip-caption">Snack Crispy</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MENU SECTION ===== -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">Daftar Menu</span>
+        <h2 class="section-title">Pilihan Menu Sekayu</h2>
+        <p class="section-desc">
+          Pilih menu favoritmu — tambahkan ke keranjang untuk estimasi harga saat booking meja
+        </p>
+      </div>
+
+      <!-- Category Tabs -->
+      <div class="menu-tabs" data-aos="fade-up">
+        <button class="tab-btn active" onclick="filterMenu('all', this)">Semua</button>
+        <button class="tab-btn" onclick="filterMenu('mie', this)">🍜 Mie Kuah</button>
+        <button class="tab-btn" onclick="filterMenu('nasi', this)">🍚 Nasi & Ayam</button>
+        <button class="tab-btn" onclick="filterMenu('snack', this)">🍟 Snack</button>
+        <button class="tab-btn" onclick="filterMenu('minuman', this)">🥤 Minuman</button>
+      </div>
+
+      <!-- Menu Grid -->
+      <div class="menu-grid" id="menuGrid">
+        <!-- Mie Kuah -->
+        <div class="menu-card" data-category="mie" data-aos="fade-up">
+          <div class="menu-img-wrap">
+            <img src="https://www.genspark.ai/api/files/s/63r9x4bX" alt="Mie Kuah Sekayu Original" loading="lazy" />
+            <span class="menu-badge-cat">Mie Kuah</span>
+          </div>
+          <div class="menu-info">
+            <h3>Mie Kuah Sekayu Original</h3>
+            <p>Mie kuah dengan bumbu rempah spesial, topping telur ceplok, irisan tomat & daun bawang segar</p>
+            <div class="menu-footer">
+              <span class="menu-price">Rp 15.000</span>
+              <div class="menu-qty" id="qty-mie-1">
+                <button class="qty-btn minus" onclick="changeQty('mie-1', -1)"><i class="fas fa-minus"></i></button>
+                <span class="qty-num">0</span>
+                <button class="qty-btn plus" onclick="changeQty('mie-1', 1)"><i class="fas fa-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="mie" data-aos="fade-up" data-aos-delay="100">
+          <div class="menu-img-wrap">
+            <img src="https://www.genspark.ai/api/files/s/63r9x4bX" alt="Mie Kuah Sekayu Pedas" loading="lazy" />
+            <span class="menu-badge-cat">Mie Kuah</span>
+          </div>
+          <div class="menu-info">
+            <h3>Mie Kuah Sekayu Pedas</h3>
+            <p>Versi pedas dari mie kuah signature Sekayu dengan kuah gurih kaya rempah yang bikin ketagihan</p>
+            <div class="menu-footer">
+              <span class="menu-price">Rp 17.000</span>
+              <div class="menu-qty" id="qty-mie-2">
+                <button class="qty-btn minus" onclick="changeQty('mie-2', -1)"><i class="fas fa-minus"></i></button>
+                <span class="qty-num">0</span>
+                <button class="qty-btn plus" onclick="changeQty('mie-2', 1)"><i class="fas fa-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nasi & Ayam -->
+        <div class="menu-card" data-category="nasi" data-aos="fade-up" data-aos-delay="200">
+          <div class="menu-img-wrap">
+            <img src="https://www.genspark.ai/api/files/s/ZG6I5YVp" alt="Nasi Ayam Bakar" loading="lazy" />
+            <span class="menu-badge-cat">Nasi & Ayam</span>
+          </div>
+          <div class="menu-info">
+            <h3>Nasi Ayam Bakar</h3>
+            <p>Nasi putih pulen dengan ayam bakar bumbu kecap, sambal merah segar, dan lalapan timun tomat</p>
+            <div class="menu-footer">
+              <span class="menu-price">Rp 20.000</span>
+              <div class="menu-qty" id="qty-nasi-1">
+                <button class="qty-btn minus" onclick="changeQty('nasi-1', -1)"><i class="fas fa-minus"></i></button>
+                <span class="qty-num">0</span>
+                <button class="qty-btn plus" onclick="changeQty('nasi-1', 1)"><i class="fas fa-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="nasi" data-aos="fade-up" data-aos-delay="300">
+          <div class="menu-img-wrap">
+            <img src="https://www.genspark.ai/api/files/s/ZG6I5YVp" alt="Nasi Ayam Goreng" loading="lazy" />
+            <span class="menu-badge-cat">Nasi & Ayam</span>
+          </div>
+          <div class="menu-info">
+            <h3>Nasi Ayam Goreng</h3>
+            <p>Ayam goreng crispy golden brown, nasi hangat, sambal spesial, lalapan segar</p>
+            <div class="menu-footer">
+              <span class="menu-price">Rp 20.000</span>
+              <div class="menu-qty" id="qty-nasi-2">
+                <button class="qty-btn minus" onclick="changeQty('nasi-2', -1)"><i class="fas fa-minus"></i></button>
+                <span class="qty-num">0</span>
+                <button class="qty-btn plus" onclick="changeQty('nasi-2', 1)"><i class="fas fa-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Snack -->
+        <div class="menu-card" data-category="snack" data-aos="fade-up">
+          <div class="menu-img-wrap">
+            <img src="https://www.genspark.ai/api/files/s/XrI4SupP" alt="Kentang Goreng" loading="lazy" />
+            <span class="menu-badge-cat">Snack</span>
+          </div>
+          <div class="menu-info">
+            <h3>Kentang Goreng</h3>
+            <p>Kentang goreng crispy golden, disajikan dengan saus tomat & saus keju spesial Sekayu</p>
+            <div class="menu-footer">
+              <span class="menu-price">Rp 12.000</span>
+              <div class="menu-qty" id="qty-snack-1">
+                <button class="qty-btn minus" onclick="changeQty('snack-1', -1)"><i class="fas fa-minus"></i></button>
+                <span class="qty-num">0</span>
+                <button class="qty-btn plus" onclick="changeQty('snack-1', 1)"><i class="fas fa-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="snack" data-aos="fade-up" data-aos-delay="100">
+          <div class="menu-img-wrap">
+            <img src="https://www.genspark.ai/api/files/s/ZG6I5YVp" alt="Roti Bakar" loading="lazy" />
+            <span class="menu-badge-cat">Snack</span>
+          </div>
+          <div class="menu-info">
+            <h3>Roti Bakar</h3>
+            <p>Roti bakar renyah dengan pilihan topping coklat meses, keju, atau coklat keju</p>
+            <div class="menu-footer">
+              <span class="menu-price">Rp 10.000</span>
+              <div class="menu-qty" id="qty-snack-2">
+                <button class="qty-btn minus" onclick="changeQty('snack-2', -1)"><i class="fas fa-minus"></i></button>
+                <span class="qty-num">0</span>
+                <button class="qty-btn plus" onclick="changeQty('snack-2', 1)"><i class="fas fa-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="snack" data-aos="fade-up" data-aos-delay="200">
+          <div class="menu-img-wrap">
+            <img src="https://www.genspark.ai/api/files/s/XrI4SupP" alt="Nugget" loading="lazy" />
+            <span class="menu-badge-cat">Snack</span>
+          </div>
+          <div class="menu-info">
+            <h3>Nugget Goreng</h3>
+            <p>Nugget ayam premium goreng crispy, disajikan hangat dengan saus sambal pedas manis</p>
+            <div class="menu-footer">
+              <span class="menu-price">Rp 13.000</span>
+              <div class="menu-qty" id="qty-snack-3">
+                <button class="qty-btn minus" onclick="changeQty('snack-3', -1)"><i class="fas fa-minus"></i></button>
+                <span class="qty-num">0</span>
+                <button class="qty-btn plus" onclick="changeQty('snack-3', 1)"><i class="fas fa-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="snack" data-aos="fade-up" data-aos-delay="300">
+          <div class="menu-img-wrap">
+            <img src="https://www.genspark.ai/api/files/s/XrI4SupP" alt="Cheese Stick" loading="lazy" />
+            <span class="menu-badge-cat">Snack</span>
+          </div>
+          <div class="menu-info">
+            <h3>Cheese Stick</h3>
+            <p>Cheese stick goreng garing dengan keju leleh di dalam, dicocol saus tomat & mayonaise</p>
+            <div class="menu-footer">
+              <span class="menu-price">Rp 13.000</span>
+              <div class="menu-qty" id="qty-snack-4">
+                <button class="qty-btn minus" onclick="changeQty('snack-4', -1)"><i class="fas fa-minus"></i></button>
+                <span class="qty-num">0</span>
+                <button class="qty-btn plus" onclick="changeQty('snack-4', 1)"><i class="fas fa-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Minuman -->
+        <div class="menu-card" data-category="minuman" data-aos="fade-up">
+          <div class="menu-img-wrap">
+            <div class="menu-img-placeholder drink-placeholder">
+              <i class="fas fa-coffee"></i>
+            </div>
+            <span class="menu-badge-cat">Minuman</span>
+          </div>
+          <div class="menu-info">
+            <h3>Es Teh Sekayu</h3>
+            <p>Es teh manis segar khas Sekayu, diseduh dari teh pilihan dengan takaran pas</p>
+            <div class="menu-footer">
+              <span class="menu-price">Rp 5.000</span>
+              <div class="menu-qty" id="qty-minum-1">
+                <button class="qty-btn minus" onclick="changeQty('minum-1', -1)"><i class="fas fa-minus"></i></button>
+                <span class="qty-num">0</span>
+                <button class="qty-btn plus" onclick="changeQty('minum-1', 1)"><i class="fas fa-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="minuman" data-aos="fade-up" data-aos-delay="100">
+          <div class="menu-img-wrap">
+            <div class="menu-img-placeholder drink-placeholder">
+              <i class="fas fa-mug-hot"></i>
+            </div>
+            <span class="menu-badge-cat">Minuman</span>
+          </div>
+          <div class="menu-info">
+            <h3>Kopi Susu Sekayu</h3>
+            <p>Espresso shot dengan susu segar full cream, sedikit gula aren — creamy & balanced</p>
+            <div class="menu-footer">
+              <span class="menu-price">Rp 12.000</span>
+              <div class="menu-qty" id="qty-minum-2">
+                <button class="qty-btn minus" onclick="changeQty('minum-2', -1)"><i class="fas fa-minus"></i></button>
+                <span class="qty-num">0</span>
+                <button class="qty-btn plus" onclick="changeQty('minum-2', 1)"><i class="fas fa-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="minuman" data-aos="fade-up" data-aos-delay="200">
+          <div class="menu-img-wrap">
+            <div class="menu-img-placeholder drink-placeholder">
+              <i class="fas fa-glass-martini-alt"></i>
+            </div>
+            <span class="menu-badge-cat">Minuman</span>
+          </div>
+          <div class="menu-info">
+            <h3>Jus Buah Segar</h3>
+            <p>Pilihan jus alpukat, mangga, atau jeruk — dibuat dari buah segar tanpa pemanis buatan</p>
+            <div class="menu-footer">
+              <span class="menu-price">Rp 10.000</span>
+              <div class="menu-qty" id="qty-minum-3">
+                <button class="qty-btn minus" onclick="changeQty('minum-3', -1)"><i class="fas fa-minus"></i></button>
+                <span class="qty-num">0</span>
+                <button class="qty-btn plus" onclick="changeQty('minum-3', 1)"><i class="fas fa-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="minuman" data-aos="fade-up" data-aos-delay="300">
+          <div class="menu-img-wrap">
+            <div class="menu-img-placeholder drink-placeholder">
+              <i class="fas fa-blender"></i>
+            </div>
+            <span class="menu-badge-cat">Minuman</span>
+          </div>
+          <div class="menu-info">
+            <h3>Minuman Dingin Lainnya</h3>
+            <p>Es jeruk, es coklat, milkshake vanilla/coklat — segar untuk menemani santai kamu</p>
+            <div class="menu-footer">
+              <span class="menu-price">Rp 8.000</span>
+              <div class="menu-qty" id="qty-minum-4">
+                <button class="qty-btn minus" onclick="changeQty('minum-4', -1)"><i class="fas fa-minus"></i></button>
+                <span class="qty-num">0</span>
+                <button class="qty-btn plus" onclick="changeQty('minum-4', 1)"><i class="fas fa-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Menu Grid -->
+
+      <div class="menu-note" data-aos="fade-up">
+        <i class="fas fa-info-circle"></i>
+        <p>Harga di atas merupakan <strong>estimasi</strong>. Menu dan harga resmi akan dikonfirmasi oleh Sekayu Coffee & Eatery. Pembayaran dilakukan di tempat.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BOOKING SECTION ===== -->
+  <section class="booking-section" id="booking">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">Reservasi</span>
+        <h2 class="section-title">Booking Meja</h2>
+        <p class="section-desc">
+          Isi form di bawah — kami akan mengirimkan konfirmasi via WhatsApp
+        </p>
+      </div>
+
+      <div class="booking-layout">
+        <!-- Form -->
+        <div class="booking-form-wrap" data-aos="fade-right">
+          <form id="bookingForm" onsubmit="submitBooking(event)">
+            <div class="form-group">
+              <label for="guestName"><i class="fas fa-user"></i> Nama Lengkap *</label>
+              <input type="text" id="guestName" placeholder="Masukkan nama lengkap kamu" required />
+            </div>
+            <div class="form-group">
+              <label for="guestPhone"><i class="fas fa-phone"></i> No. WhatsApp *</label>
+              <input type="tel" id="guestPhone" placeholder="Contoh: 0812xxxxxxxx" required />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="bookingDate"><i class="fas fa-calendar"></i> Tanggal *</label>
+                <input type="date" id="bookingDate" required />
+              </div>
+              <div class="form-group">
+                <label for="bookingTime"><i class="fas fa-clock"></i> Jam *</label>
+                <select id="bookingTime" required>
+                  <option value="">Pilih jam</option>
+                  <option value="10:00">10:00 WIB</option>
+                  <option value="10:30">10:30 WIB</option>
+                  <option value="11:00">11:00 WIB</option>
+                  <option value="11:30">11:30 WIB</option>
+                  <option value="12:00">12:00 WIB</option>
+                  <option value="12:30">12:30 WIB</option>
+                  <option value="13:00">13:00 WIB</option>
+                  <option value="13:30">13:30 WIB</option>
+                  <option value="14:00">14:00 WIB</option>
+                  <option value="14:30">14:30 WIB</option>
+                  <option value="15:00">15:00 WIB</option>
+                  <option value="15:30">15:30 WIB</option>
+                  <option value="16:00">16:00 WIB</option>
+                  <option value="16:30">16:30 WIB</option>
+                  <option value="17:00">17:00 WIB</option>
+                  <option value="17:30">17:30 WIB</option>
+                  <option value="18:00">18:00 WIB</option>
+                  <option value="18:30">18:30 WIB</option>
+                  <option value="19:00">19:00 WIB</option>
+                  <option value="19:30">19:30 WIB</option>
+                  <option value="20:00">20:00 WIB</option>
+                  <option value="20:30">20:30 WIB</option>
+                  <option value="21:00">21:00 WIB</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="guestCount"><i class="fas fa-users"></i> Jumlah Orang *</label>
+              <div class="guest-counter">
+                <button type="button" class="counter-btn" onclick="changeGuest(-1)"><i class="fas fa-minus"></i></button>
+                <span id="guestCountDisplay">2</span>
+                <button type="button" class="counter-btn" onclick="changeGuest(1)"><i class="fas fa-plus"></i></button>
+                <input type="hidden" id="guestCount" value="2" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="bookingNote"><i class="fas fa-sticky-note"></i> Catatan (Opsional)</label>
+              <textarea id="bookingNote" placeholder="Contoh: meja dekat jendela, ada acara ulang tahun, dll." rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-wa btn-full">
+              <i class="fab fa-whatsapp"></i>
+              Konfirmasi via WhatsApp
+            </button>
+            <p class="form-disclaimer">
+              <i class="fas fa-lock"></i>
+              Kamu akan diarahkan ke WhatsApp Sekayu untuk konfirmasi akhir. Tidak ada pembayaran online.
+            </p>
+          </form>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="booking-summary" data-aos="fade-left" id="bookingSummary">
+          <div class="summary-header">
+            <h3><i class="fas fa-receipt"></i> Ringkasan Pesanan</h3>
+          </div>
+          <div class="summary-items" id="summaryItems">
+            <div class="summary-empty" id="summaryEmpty">
+              <i class="fas fa-shopping-basket"></i>
+              <p>Belum ada menu dipilih</p>
+              <a href="#menu" class="link-to-menu">← Pilih menu di atas</a>
+            </div>
+          </div>
+          <div class="summary-total" id="summaryTotal" style="display:none;">
+            <div class="total-row">
+              <span>Subtotal Menu</span>
+              <span id="summarySubtotal">Rp 0</span>
+            </div>
+            <div class="total-row total-main">
+              <strong>Total Estimasi</strong>
+              <strong id="summaryGrandTotal">Rp 0</strong>
+            </div>
+            <p class="total-note">* Harga dapat berubah sesuai konfirmasi</p>
+          </div>
+
+          <!-- Info Card -->
+          <div class="summary-info-card">
+            <div class="info-row">
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Jam Operasional</strong>
+                <span>Setiap hari: 10.00 – 22.00 WIB</span>
+              </div>
+            </div>
+            <div class="info-row">
+              <i class="fab fa-whatsapp"></i>
+              <div>
+                <strong>WhatsApp</strong>
+                <span>0822-4603-4954</span>
+              </div>
+            </div>
+            <div class="info-row">
+              <i class="fab fa-instagram"></i>
+              <div>
+                <strong>Instagram</strong>
+                <span>@sekayucafe.id</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LOCATION SECTION ===== -->
+  <section class="location-section" id="location">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">Temukan Kami</span>
+        <h2 class="section-title">Lokasi & Kontak</h2>
+      </div>
+      <div class="location-layout">
+        <div class="location-info" data-aos="fade-right">
+          <div class="location-card">
+            <div class="loc-item">
+              <div class="loc-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="loc-content">
+                <h4>Alamat</h4>
+                <p>Jl. Raya Kunduran, Kec. Kunduran<br />Kabupaten Blora, Jawa Tengah 58255</p>
+                <a href="https://maps.google.com/?q=Sekayu+Coffee+Eatery+Kunduran+Blora" target="_blank" class="loc-link">
+                  <i class="fas fa-directions"></i> Buka di Google Maps
+                </a>
+              </div>
+            </div>
+            <div class="loc-item">
+              <div class="loc-icon"><i class="fas fa-clock"></i></div>
+              <div class="loc-content">
+                <h4>Jam Operasional</h4>
+                <p>Senin – Minggu: <strong>10.00 – 22.00 WIB</strong></p>
+                <span class="open-badge"><i class="fas fa-circle"></i> Buka Setiap Hari</span>
+              </div>
+            </div>
+            <div class="loc-item">
+              <div class="loc-icon"><i class="fab fa-whatsapp"></i></div>
+              <div class="loc-content">
+                <h4>WhatsApp</h4>
+                <p>0822-4603-4954</p>
+                <a href="https://wa.me/6282246034954" target="_blank" class="btn btn-wa-sm">
+                  <i class="fab fa-whatsapp"></i> Chat Sekarang
+                </a>
+              </div>
+            </div>
+            <div class="loc-item">
+              <div class="loc-icon"><i class="fab fa-instagram"></i></div>
+              <div class="loc-content">
+                <h4>Instagram</h4>
+                <p>@sekayucafe.id</p>
+                <a href="https://instagram.com/sekayucafe.id" target="_blank" class="btn btn-ig-sm">
+                  <i class="fab fa-instagram"></i> Follow Kami
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="location-map" data-aos="fade-left">
+          <div class="map-wrap">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.2!2d111.2889!3d-7.0123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7aa3e8fa3d2d3f%3A0x0!2sKunduran%2C%20Kec.%20Kunduran%2C%20Kabupaten%20Blora%2C%20Jawa%20Tengah%2058255!5e0!3m2!1sid!2sid!4v1700000000000"
+              width="100%"
+              height="400"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Lokasi Sekayu Coffee & Eatery"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <span class="logo-icon">🌿</span>
+              <div>
+                <span class="logo-main">Sekayu</span>
+                <span class="logo-sub">Coffee & Eatery</span>
+              </div>
+            </div>
+            <p>Tempat ngobrol, makan, dan menikmati waktu dengan suasana hangat di Kunduran, Blora.</p>
+            <div class="footer-social">
+              <a href="https://wa.me/6282246034954" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+              <a href="https://instagram.com/sekayucafe.id" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <h4>Navigasi</h4>
+            <ul>
+              <li><a href="#about">Tentang Kami</a></li>
+              <li><a href="#menu">Menu & Harga</a></li>
+              <li><a href="#booking">Booking Meja</a></li>
+              <li><a href="#location">Lokasi</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h4>Kontak</h4>
+            <p><i class="fas fa-map-marker-alt"></i> Kunduran, Kab. Blora, Jawa Tengah 58255</p>
+            <p><i class="fab fa-whatsapp"></i> 0822-4603-4954</p>
+            <p><i class="fab fa-instagram"></i> @sekayucafe.id</p>
+            <p><i class="fas fa-clock"></i> 10.00 – 22.00 WIB</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2025 Sekayu Coffee & Eatery. Semua hak dilindungi.</p>
+        <p class="footer-tagline">Made with <i class="fas fa-heart"></i> in Kunduran, Blora</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== SUCCESS TOAST ===== -->
+  <div class="toast" id="toast">
+    <i class="fas fa-check-circle"></i>
+    <span id="toastMsg">Berhasil ditambahkan!</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
